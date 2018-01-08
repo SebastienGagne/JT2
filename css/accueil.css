@@ -1,0 +1,173 @@
+/**********************************/
+/* STYLES PAR DEFAUT POUR ACCUEIL */
+/**********************************/
+
+.mainAccueil {
+  z-index: 5;
+  position:relative;
+  top:350px;
+  padding: 0px 40px;
+}
+
+.leslogos {
+  margin:5px 15px;
+  height:60px;
+}
+
+#formulaireContact {
+  padding:0px 60px
+}
+
+#formulaireContact input {
+  color:#303030;
+  width: 18em;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+#formulaireContact #boutonEnvoyer {
+  width: 8em;
+  margin:20px 0px;
+}
+
+#formulaireContact textarea {
+  color:#303030;
+  resize: none;
+  width: 100%;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border: solid 2px lightgrey;
+  background-color: #FBFBFB;
+}
+
+#tableaupresentation {
+  display: flex;
+  flex-direction: row;
+}
+
+#presentation,#coordonnees,#carte,#logos,#contact {
+  margin:50px 0px;
+}
+
+#colonnecentrale {
+  width:60%;
+  font-family: "Georgia";
+  color:#fff;
+}
+#colonnegauche,#colonnedroite {
+  margin:0px 10px;
+  width:20%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items: center;
+}
+.imageColonne {
+  display:flex;
+  width:100%;
+  min-width: 150px;
+}
+#presentation,#coordonnees,#carte,#contact {
+  color:#fff;
+  font-family: "Georgia";
+}
+
+
+/*********************
+
+#colonnecentrale {
+    width:60%;
+    font-family: "Georgia";
+    color:#fff;
+  }
+  #colonnegauche,#colonnedroite {
+    width:20%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+  }
+  .imageColonne {
+    display:flex;
+    width:100%;
+    min-width: 150px;
+  }
+  #presentation,#coordonnees,#carte,#contact {
+    color:#fff;
+    font-family: "Georgia";
+  }
+
+**********************/
+
+.imageColonnePresentation {
+  width:100%;
+}
+
+#colonnecentrale {
+
+  padding:0px 10px;
+  text-align: justify;
+}
+
+#colonnecentrale p {
+  line-height: 180%;
+  text-indent: 50px;
+}
+
+.titreAccueil {
+  font-family: cursive;
+  margin-bottom:20px;
+}
+
+.ligneFormulaire {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 800px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
+}

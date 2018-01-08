@@ -1,0 +1,258 @@
+/**********************************/
+/* STYLES PAR DEFAUT POUR ACCUEIL */
+/**********************************/
+
+.mainAccueil {
+  z-index: 5;
+  position:relative;
+  width:80%;
+  margin-left:10%;
+  top:480px;
+  /*margin-top:300px;*/
+  /*padding: 0px 40px;*/
+}
+
+#carte {
+  width: 80%;
+  margin-left:10%;
+}
+
+#presentation {
+
+}
+
+.leslogos {
+  margin:5px 15px;
+  height:60px;
+}
+
+#formulaireContact {
+  padding:0px 60px
+}
+
+#formulaireContact input {
+  color:#303030;
+  width: 18em;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+#formulaireContact #boutonEnvoyer {
+  width: 8em;
+  margin:20px 0px;
+}
+
+#formulaireContact textarea {
+  color:#303030;
+  resize: none;
+  width: 100%;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border: solid 2px lightgrey;
+  background-color: #FBFBFB;
+}
+
+#tableaupresentation {
+  display: flex;
+  flex-direction: row;
+}
+
+#coordonnees,#logos,#contact {
+  margin:50px 0px;
+}
+
+#colonnecentrale {
+  width:60%;
+  font-family: "Georgia";
+  color:#fff;
+  padding:0px 20px;
+  text-align: justify;
+}
+#colonnegauche,#colonnedroite {
+  /*margin:0px 10px;*/
+  width:20%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items: center;
+}
+.imageColonne {
+  display:flex;
+  width:100%;
+  min-width: 150px;
+}
+#presentation,#coordonnees,#carte,#contact {
+  color:#fff;
+  font-family: "Georgia";
+}
+
+@media (max-width: 1800px) {
+
+.mainAccueil {
+  top:480px;
+}
+
+@media (max-width: 1700px) {
+
+.mainAccueil {
+  top:450px;
+}
+
+@media (max-width: 1600px) {
+
+.mainAccueil {
+  top:420px;
+}
+
+
+
+@media (max-width: 1500px) {
+
+.mainAccueil {
+  top:390px;
+}
+
+}@media (max-width: 1400px) {
+
+.mainAccueil {
+  top:360px;
+}
+
+}@media (max-width: 1300px) {
+
+.mainAccueil {
+  top:330px;
+}
+
+}@media (max-width: 1200px) {
+
+.mainAccueil {
+  top:300px;
+}
+
+}@media (max-width: 1100px) {
+
+.mainAccueil {
+  top:270px;
+}
+
+}@media (max-width: 1000px) {
+
+.mainAccueil {
+  top:240px;
+}
+
+#colonnegauche, #colonnedroite {
+  display:none;
+}
+
+#colonnecentrale {
+  width:100%;
+}
+
+#tableaupresentation {
+  display: flex;
+  flex-direction: column;
+}
+
+}
+
+
+
+/*********************
+
+#colonnecentrale {
+    width:60%;
+    font-family: "Georgia";
+    color:#fff;
+  }
+  #colonnegauche,#colonnedroite {
+    width:20%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    align-items: center;
+  }
+  .imageColonne {
+    display:flex;
+    width:100%;
+    min-width: 150px;
+  }
+  #presentation,#coordonnees,#carte,#contact {
+    color:#fff;
+    font-family: "Georgia";
+  }
+
+**********************/
+
+.imageColonnePresentation {
+  width:100%;
+}
+
+/*#colonnegauche,#colonnedroite,#colonnecentrale {
+  width:80%;
+  margin-left: 10%;
+}*/
+
+#colonnecentrale p {
+  line-height: 180%;
+  text-indent: 50px;
+}
+
+.titreAccueil {
+  font-family: cursive;
+  margin-bottom:20px;
+}
+
+.ligneFormulaire {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 800px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
+
+@media (max-width: 480px) {
+
+}
+
+@media (max-width: 320px) {
+
+}

@@ -1,0 +1,190 @@
+.footer_admin {
+	background-color: #F5F5F5;
+	color:#606060;
+	height:2em;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+#pfooter {
+	margin:0px 20px;
+}
+
+.imgBan {
+    width:250px;
+    border:solid 1px lightgrey;
+    margin:2px;
+}
+
+.galerieB {
+    width:90%;
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+body {
+	display:flex;
+	flex-direction:column;
+	min-height: 100vh;
+}
+
+header, main, footer {
+	display:flex;
+}
+
+main {
+	flex-direction: column;
+	flex-grow:1;
+}
+
+.boutonSG {
+	height:40px;
+	width:10em;
+	margin-left:20px;
+	background-color: lightgrey;
+	border-radius: 3px;
+	box-shadow: 3px 3px 3px grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position:relative;
+}
+
+.boutonSG:hover {
+	background-color: grey;
+}
+
+.boutonSG>a {
+	text-decoration: none;
+	color:black;
+	outline:none;
+}
+
+.boutonSG:hover>a {
+	color:white;
+	/*font-style: italic;*/
+}
+
+.boutonSG>a:visited {
+	box-shadow: 1px 1px 1px grey;
+}
+
+.boutonSG:active {
+	top:2px;
+	left:2px;
+}
+
+.admtab {
+    /*width:80%;*/
+    margin:auto;
+}
+.admth, .admtd {
+    width:12em;
+    height:2.5em;
+    text-align: center;
+    border:solid 1px black;
+}
+.admth {
+    background-color: grey;
+    color:white;
+    font-weight: bold;
+}
+.admtab>tbody>tr:nth-child(odd)>.celluletitre {
+    background-color: white;
+    border:solid 1px black;
+}
+.admtab>tbody>tr:nth-child(even)>.celluletitre {
+    background-color: lightgrey;
+    border:solid 1px black;
+}
+.admtab>tbody>tr:nth-child(odd) {
+    background-color: white;
+}
+.admtab>tbody>tr:nth-child(even) {
+    background-color: lightgrey;
+}
+
+.imgcol {
+    width:250px;
+}
+
+.fieldset1_photos_C {
+	display:flex;
+	flex-direction:column;
+	width:45%;
+}
+
+.div1_photos_C {
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	width:80%;
+	margin-left:10%;
+	margin-top:20px;
+}
+
+.div2_photos_C {
+	border-radius:2px;
+	border:solid 1px grey;
+	box-shadow: 1px 1px 1px grey;
+	padding:5px;
+	margin:10px 0px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 300px;
+}
+
+.div3_photos_C {
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	width:100%;
+	height:250px;
+}
+
+.div4_photos_C {
+	margin:0px 3px;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-around;
+	align-items: center;
+}
+
+.div_label_photos_C {
+	display:flex;
+	flex-direction:row;
+}
+
+.label_nouvelle_photo {
+	display:none;
+}
+
+/* tableau des tarifs */
+
+.table_tarifs {
+    width:90%;
+    margin-left:5%;
+    margin-top:2em;
+}
+
+.table_tarifs td, .table_tarifs th {
+    font-size: 1.5em;
+}
+
+.table_tarifs td input {
+    width: 50%;
+}
+
+.fieldset_tarifs {
+	width:80%;
+	margin-left:10%;
+	margin-top:20px;
+}
+
+/* fin tableau des tarifs */

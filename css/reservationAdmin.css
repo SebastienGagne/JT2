@@ -1,0 +1,112 @@
+/**********************************/
+/* STYLES PAR DEFAUT POUR ACCUEIL */
+/**********************************/
+
+.formulaireDemandeAdmin {
+  color:black;
+  width:80%;
+  margin:auto;
+}
+
+.formulaireDemandeAdmin input, #message {
+  color:black;
+  border-radius: 5px;
+}
+
+.ligneFormulaireResa {
+  margin-top:20px;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.itemLigneResa {
+  margin-right:30px;
+  display:flex;
+  flex-direction: column;
+}
+
+/**************************/
+/* corrections responsive */
+/**************************/
+
+@media (max-width: 1800px) {
+  
+}
+
+@media (max-width: 1700px) {
+  
+}
+
+@media (max-width: 1600px) {
+  
+}
+
+@media (max-width: 1500px) {
+  
+}
+
+@media (max-width: 1400px) {
+  
+}
+
+@media (max-width: 1300px) {
+  
+}
+
+@media (max-width: 1200px) {
+  
+}
+
+@media (max-width: 1100px) {
+  
+}
+
+@media (max-width: 1000px) {
+  
+  
+
+}
+
+@media (max-width: 900px) {
+
+  
+
+}
+
+@media (max-width: 800px) {
+
+  
+
+}
+
+@media (max-width: 700px) {
+
+  
+
+}
+
+@media (max-width: 600px) {
+
+  
+
+}
+
+@media (max-width: 500px) {
+
+  
+
+}
+
+@media (max-width: 400px) {
+
+  
+
+}
+
+@media (max-width: 300px) {
+
+  
+
+}

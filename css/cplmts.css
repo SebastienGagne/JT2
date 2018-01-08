@@ -1,0 +1,87 @@
+/**************************/
+/* compléments personnels */
+/**************************/
+
+.menuseb {
+  width:65%;
+  margin-left:30%;
+  max-width:700px;
+  z-index: 6;
+  /*position:relative;*/
+  position:fixed;
+  top:70px;
+}
+
+@media (max-width: 1600px) {
+
+.menuseb {
+	width:65%;
+	margin-left:45%;
+	max-width:600px;
+}
+
+@media (max-width: 1200px) {
+
+.menuseb {
+	width:65%;
+	margin-left:35%;
+	max-width:600px;
+}
+
+@media (max-width: 1000px) {
+
+.menuseb {
+	width:65%;
+	margin-left:30%;
+	max-width:600px;
+}
+
+.navbar-default .navbar-nav > li > a, .dropdown-menu > li > a {
+	font-size:13px;	
+}
+
+
+@media (max-width: 850px) {
+
+.menuseb {
+	width:65%;
+	margin-left:30%;
+	max-width:600px;
+}
+
+.navbar-default .navbar-nav > li > a, .dropdown-menu > li > a {
+	font-size:12px;	
+}
+
+@media (max-width: 767px) {
+
+.menuseb {
+	width:65%;
+	margin-left:30%;
+	max-width:600px;
+}
+
+.navbar-default .navbar-nav > li > a, .dropdown-menu > li > a {
+	font-size:12px;	
+}
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+	color: /*#EEEEEE*/#606060;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+	color: /*#FFFFFF*/#606060;
+	background-color: #D5D5D5; /* ajout seb */
+}
+
+@media (max-width: 499px) {
+
+}
+
+@media (max-width: 409px) {
+
+}
+
+@media (max-width: 391px) {
+
+}

@@ -1,0 +1,121 @@
+/*********************/
+/* styles par défaut */
+/*********************/
+
+.baniere {
+	position:relative;
+	/*left: 190px;*/
+	width:80%;
+  margin-left:10%;
+  margin-top: 30px;
+
+}
+
+#img1 {
+  z-index: 1;
+}
+
+#img2 {
+  z-index: 2;
+}
+
+#img3 {
+  z-index: 3;
+}
+
+#img4 {
+  z-index: 4;
+}
+
+.imagebaniere {
+  position:absolute;
+  top:0;
+  width:100%; 
+  border-radius: 4px;
+}
+
+/******************/
+/* styles adaptés */
+/******************/
+
+@media (max-width: 1800px) {
+}
+
+@media (max-width: 1700px) {
+}
+
+
+@media (max-width: 1600px) {
+}
+
+
+@media (max-width: 1500px) {
+}
+
+
+@media (max-width: 1400px) {
+}
+
+
+@media (max-width: 1300px) {
+}
+
+@media (max-width: 1200px) {
+
+}
+
+
+@media (max-width: 1100px) {
+
+
+}
+
+@media (max-width: 1000px) {
+
+  
+
+  
+
+}
+
+@media (max-width: 900px) {
+
+  .baniere {
+    position:relative;
+    /*left: 190px;*/
+    width:100%;
+    margin-left:0%;
+    margin-top: -20px;
+  }
+
+  .imagebaniere {
+    border-radius: 0px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  
+}
+
+@media (max-width: 700px) {
+
+  
+}
+
+@media (max-width: 600px) {
+
+  
+}
+
+@media (max-width: 500px) {
+
+  
+}
+
+
+
+@media (max-width: 300px) {
+
+  
+}

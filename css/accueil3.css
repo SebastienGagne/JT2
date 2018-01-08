@@ -1,0 +1,270 @@
+/**********************************/
+/* STYLES PAR DEFAUT POUR ACCUEIL */
+/**********************************/
+
+#identite {
+  color:#EFF7F6;
+  position:absolute;
+  font-style:italic;
+  right:50px;
+  z-index: 10;
+}
+
+.mainAccueil {
+  z-index: 5;
+  position:relative;
+  width:80%;
+  margin-left:10%;
+  top:480px;
+}
+
+#tableaupresentation {
+  display:flex;
+  flex-direction:row;
+}
+
+#colonnegauche, #colonnedroite {
+  display:flex;
+  flex-direction:column;
+  width:20%;
+}
+
+#colonnecentrale {
+  width:60%;
+  /*font-family: "Georgia";*/
+  color:/*#fff*/#EFF7F6;
+  padding:0px 20px;
+  text-align: justify;
+}
+
+.imageColonne {
+  display:flex;
+  width:100%;
+  min-width: 150px;
+}
+
+#presentation,#coordonnees,#carte,#contact {
+  color:/*#fff*/#EFF7F6;
+  /*font-family: "Georgia";*/
+}
+
+#iframeCarte {
+  width:800px;
+  height:600px;
+}
+
+#formulaireContact {
+  width:60%;
+  margin-left:20%;
+}
+
+#formulaireContact input {
+  color:#303030;
+  width: 18em;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+
+#formulaireContact fieldset {
+  display:flex;
+  flex-direction:column;
+}
+
+#formulaireContact fieldset p {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#formulaireContact fieldset p label {
+  min-width: 15em;
+}
+
+#formulaireContact #boutonEnvoyer {
+  width: 8em;
+  margin:20px 0px;
+}
+
+#formulaireContact #boutonEnvoyer:hover {
+  background-color: #4D6A79;
+  color:white;
+}
+
+#formulaireContact textarea {
+  color:#303030;
+  resize: none;
+  width: 100%;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border: solid 2px lightgrey;
+  background-color: #FBFBFB;
+}
+
+.mainAccueil p {
+  /*font-family:verdana;*/
+  font-size:14pt;
+}
+
+/**************************/
+/* corrections responsive */
+/**************************/
+
+@media (max-width: 1800px) {
+  .mainAccueil {
+    top:480px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .mainAccueil {
+    top:450px;
+  }
+}
+
+@media (max-width: 1600px) {
+  .mainAccueil {
+    top:420px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .mainAccueil {
+    top:390px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .mainAccueil {
+    top:360px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .mainAccueil {
+    top:330px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mainAccueil {
+    top:300px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .mainAccueil {
+    top:270px;
+  }
+}
+
+@media (max-width: 1000px) {
+  
+  .mainAccueil {
+    top:280px;
+  }
+
+  #colonnegauche, #colonnedroite {
+    display:none;
+  }
+
+  #colonnecentrale {
+    width:100%;
+  }
+
+  #tableaupresentation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #iframeCarte {
+    width:600px;
+    height:450px;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .mainAccueil {
+    width:90%;
+    margin-left:5%;
+    top:280px;
+  }
+
+  #contact {
+    width:90%;
+    margin-left:5%;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+  .mainAccueil {
+    top:260px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .mainAccueil {
+    top:240px;
+  }
+
+  #iframeCarte {
+    width:480px;
+    height:360px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .mainAccueil {
+    top:220px;
+  }
+  #formulaireContact fieldset p {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .mainAccueil {
+    top:200px;
+  }
+
+  #iframeCarte {
+    width:400px;
+    height:300px;
+  }
+
+}
+
+@media (max-width: 400px) {
+
+  .mainAccueil {
+    top:180px;
+  }
+
+  #iframeCarte {
+    width:320px;
+    height:240px;
+  }
+
+}
+
+@media (max-width: 300px) {
+
+  .mainAccueil {
+    top:160px;
+  }
+
+  #iframeCarte {
+    width:280px;
+    height:210px;
+  }
+
+}

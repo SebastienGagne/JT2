@@ -1,0 +1,95 @@
+/* CSS Document */
+/* text decoration (balise a) :  
+--> none : pas souligné,
+--> underline : souligné (bas),
+--> overline : souligné (haut)
+--> overline underline : souligné en hait et en bas...*/
+
+
+.date {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	/*color: #FFFFFF;*/
+	color: black
+	font-weight: bold;
+	vertical-align:middle;
+}
+
+
+.jours {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	/*color: #FFFFFF;*/
+	color:black;
+	font-weight: bold;
+	height:3em;
+}
+
+.tab_numero {
+	background:url(img/icone.jpg);
+	background-repeat:no-repeat;
+	background-position:bottom right;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	font-weight: normal;
+	border-style:solid; 
+	border-width:2px; 
+	border-color:#000099;
+	border-top:hidden;
+}
+
+.tab_cal {
+	background:url(img/entete.jpg);
+	background-repeat:no-repeat;
+	border-style:solid; 
+	border-width:2px; 
+	border-color:#000099;
+	border-bottom:hidden;
+}
+
+.reserve {
+	/*background-color:#0099FF;*/
+	background-color:red;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FFFFFF;
+}
+
+.libre {
+	background-color:#639DDC;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color:#FFFFFF;
+}
+
+.demande {
+	background-color:yellow;
+	color:black;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+.descriptif {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	padding-left:10px;
+}
+
+#prec, #suiv {
+	position:relative;
+}
+
+#prec:active, #suiv:active {
+	top:1px;
+	/*left:1px;*/
+}
+
+#prec:focus, #suiv:focus {
+	outline: 0;
+}
+
+.numero {
+	height:3em;
+}

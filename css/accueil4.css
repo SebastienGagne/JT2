@@ -1,0 +1,25 @@
+/**********************************/
+/* STYLES PAR DEFAUT POUR ACCUEIL */
+/**********************************/
+
+#identite {
+  color:#EFF7F6;
+  position:absolute;
+  font-style:italic;
+  right:50px;
+  z-index: 10;
+}
+
+.mainAccueil {
+  z-index: 5;
+  position:relative;
+  width:80%;
+  margin-left:10%;
+  top:50px;
+}
+
+.mainAccueil p {
+  /*font-family:verdana;*/
+  font-size:14pt;
+}
+

@@ -1,0 +1,126 @@
+<style type="text/css">
+    nav p {
+        position: relative;
+        display: block;
+        padding: 16px 75px 14px 15px;
+        margin:0px;
+        color:#606060;
+        font-weight: bold;
+        font-style: italic;
+    }
+</style>
+
+<nav class="navbar navbar-inverse navbar-default navbar-fixed-top">
+	<div class="container" style="width:auto;">
+		<div class="navbar-header">
+    		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+    		</button>
+    		<span class="navbar-brand lcdp"><img style="width:50px;" src="img/logos/logoJT_Admin.png"></span>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+    		<ul class="nav navbar-nav">
+        		<li><a href="index.php">Accueil</a></li>
+        		<!-- menu de modification des différentes pages du site -->
+        		<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Modifier les pages<span class="caret"></span></a>
+            		<ul class="dropdown-menu">
+                		<li><a href="index.php?controller=pageAdmin&action=modify&nomPage=accueil">Accueil</a></li>
+                		<li role="separator" class="divider"></li>
+                		<li class="dropdown-submenu">
+                    		<a tabindex="-1">Les gîtes</a>
+                    		<ul class="dropdown-menu">
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Banne">Le gîte la banne</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Sancy">Le gîte le Sancy</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=GrandGite">Le gîte de groupe</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=LesPlus">Les plus</a></li>
+                    		</ul>
+                		</li>
+                		<li role="separator" class="divider"></li>
+                		<li class="dropdown-submenu">
+                    		<a tabindex="-1">Nos valeurs</a>
+                    		<ul class="dropdown-menu">
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=CorpsEtEsprit">Le corps et l'esprit</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=NatureEtCulture">La nature et la culture</a></li>
+                    		</ul>
+                		</li>
+                		<li role="separator" class="divider"></li>
+                		<li class="dropdown-submenu">
+                    		<a tabindex="-1">Pages de tarifs</a>
+                    		<ul class="dropdown-menu">
+                        		<!--<li class="dropdown"><a href="#">Calendrier à jour</a></li>
+                        		<li role="separator" class="divider"></li>-->
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=TarifsGites">Tarif des gîtes</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=TarifsSupplements">Tarif des suppléments</a></li>
+                    		</ul>
+                		</li>
+                		<li role="separator" class="divider"></li>
+                		<li class="dropdown-submenu">
+                    		<a tabindex="-1">A voir et à faire</a>
+                    		<ul class="dropdown-menu">
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=PresentationGenerale">Présentation générale</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=SitesRandonnee">Les sites de randonnée</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Ski">Le ski</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=SitesCulturels">Les sites culturels</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Thermalisme">Le thermalisme</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Agriculture">L'agriculture</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Adrenaline">Les sports d'adrénaline</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=pageAdmin&action=modify&nomPage=Adresses">Les bonnes adresses</a></li>
+                    		</ul>
+                		</li>
+            		</ul>
+        		</li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">les banières<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.php?controller=baniere&action=readAll">liste des banières</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="index.php?controller=baniere&action=lien_baniere_page">affecter les banières aux pages</a></li>
+                    </ul>
+                </li>
+        		<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Gérer les réservations<span class="caret"></span></a>
+            		<ul class="dropdown-menu">
+                		<li class="dropdown-submenu">
+                    		<a tabindex="-1">Le Sancy</a>
+                    		<ul class="dropdown-menu">
+                        		<li class="dropdown"><a href="index.php?controller=reservation&gite=Sancy&action=gererDemandes">gérer les demandes</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=reservation&gite=Sancy&action=creerResa">créer une réservation</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown"><a href="index.php?controller=reservation&gite=Sancy&action=modifierResa">modifier une réservation</a></li>
+                        	</ul>
+                		</li>
+                		<li role="separator" class="divider"></li>
+                		<li class="dropdown-submenu">
+                    		<a tabindex="-1">La Banne</a>
+                    		<ul class="dropdown-menu">
+                        		<li class="dropdown"><a href="index.php?controller=reservation&gite=Banne&action=gererDemandes">traiter les demandes</a></li>
+                        		<li role="separator" class="divider"></li>
+                        		<li class="dropdown"><a href="index.php?controller=reservation&gite=Banne&action=creerResa">créer une réservation</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown"><a href="index.php?controller=reservation&gite=Banne&action=modifierResa">modifier une réservation</a></li>
+                        	</ul>
+                		</li>
+            		</ul>
+        		</li>
+    		</ul>
+    		<ul class="nav navbar-nav navbar-right">
+        		<li><p><?php echo "salut ".$_SESSION['login']; ?></p></li>
+                <li><a href="index.php?controller=pageConnexion&action=deconnect">se déconnecter <span class="glyphicon glyphicon-log-out"></a></li>
+    		</ul>
+		</div>
+	</div>
+</nav>

@@ -1,0 +1,90 @@
+/***************************/
+/* complements a Bootstrap */
+/***************************/
+
+.navbar-default {
+	/* Couleur de fond de la barre de navigation */
+	background-color: /*#606060*/#F5F5F5;
+	border-color: /*#606060*/#F5F5F5;
+}
+/* Couleur des titres affichés dans la barre */
+.navbar-default .navbar-brand {
+	color: #EEEEEE;
+}
+/* Couleur utilisée lors du passage de la souris sur un titre de la barre */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+	color: #EEEEEE;
+}
+/* Couleur utilisée pour les liens */
+.navbar-default .navbar-nav > li > a {
+	color: /*#EEEEEE*/#606060;
+}
+/* Couleur utilisée pour les liens lorsque la souris passe dessus */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: /*#FFFFFF*/#000;
+	text-decoration: blink;
+}
+/* Couleur utilisée pour le lien actif (celui qui est affiché sur la page) */
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #555;
+	background-color: #E7E7E7;
+}
+/* Couleur utilisée pour un menu dépliant lorsqu'il est ouvert */
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	color: #555;
+	background-color: #D5D5D5;
+}
+ 
+
+
+/* Caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+	border-top-color: #EEEEEE;
+	border-bottom-color: #EEEEEE;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+	border-top-color: #333;
+	border-bottom-color: #333;
+}
+.navbar-default .navbar-nav > .open > a .caret, 
+.navbar-default .navbar-nav > .open > a:hover .caret, 
+.navbar-default .navbar-nav > .open > a:focus .caret {
+	border-top-color: #555;
+	border-bottom-color: #555;
+}
+
+/* ajout seb */
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+	color: /*#EEEEEE*/#606060;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+	color: /*#FFFFFF*/#606060;
+	background-color: #D5D5D5; /* ajout seb */
+}
+/* fin ajout seb */
+
+
+
+/* Version mobile, le menu devient une icône qui déroule une liste avec le menu en vertical */
+
+
+.navbar-default .navbar-toggle {
+	border-color: #606060;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+	background-color: #606060;
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #CCC;
+}
+
+

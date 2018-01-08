@@ -2,7 +2,6 @@
 	<div>
 		<h3>à faire</h3>
 		<ul>
-			<li>après une demande, l'internaute est renvoyé sur une page tronquée. A corriger.</li>
 			<li>la fonction rejeter la résa entière ne marche pas.</li>
 			<li>isoler dans une table les demandes rejetées pour ne pas garder d'état 2</li>
 			<li>revoir globalement la sécurisation des pages admin</li>
@@ -19,7 +18,7 @@
 					<li>proposer un autre design</li>
 				</ul>
 			</li>
-			<li>très important : sécuriser les insertions (au cas où une personne relance sa page)</li>
+			<li>TRES IMPORTANT : sécuriser les insertions (au cas où une personne relance sa page)</li>
 		</ul>
 	</div>
 </main>

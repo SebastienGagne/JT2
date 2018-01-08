@@ -3,10 +3,10 @@
 class Conf {
 
   private static $database = array(
-    'hostname'  => 'toutdeaaqesg.mysql.db',
-    'database'  => 'toutdeaaqesg',
-    'login'     => 'toutdeaaqesg',
-    'password'  => 'Ezua6qkl'
+    'hostname'  => '*',
+    'database'  => '*',
+    'login'     => '*',
+    'password'  => '*'
   );
 
   static public function getLogin() {

@@ -5,53 +5,11 @@ require_once(File::build_path(array('model','ModelReservation.php')));
 
 class ControllerReservation {
 
-	public static function rejeterDemande() {
-		extract($_GET);
-		extract($_POST);
-		foreach ($_POST as $key => $value) {
-			if ($value == 'rejeter') {
-				//ModelReservation::classerDemande($gite,$key,2);
-				ModelReservation::deleteAllResaByJour($gite,$id);
-			}
-		}
-		ControllerReservation::gererDemandes();
-	}
-
-	public static function validerDemande() {
-		extract($_GET);
-		extract($_POST);
-		foreach ($_POST as $key => $value) {
-			if ($value == 'valider') {
-				//ModelReservation::classerDemande($gite,$key,2);
-				ModelReservation::classerDemande($gite,$key,1);
-			}
-		}
-		ControllerReservation::gererDemandes();
-	}
-
-	public static function effacerJour() {
-		extract($_GET);
-		extract($_POST);
-		if (isset($_POST['deleteDay'])) {
-			ModelReservation::deleteResaByJour($gite,$jour);
-		}
-		ControllerReservation::gererDemandes();
-	}
-
-	public static function effacerResa() {
-		extract($_GET);
-		extract($_POST);
-		if (isset($_POST['deleteResa'])) {
-			ModelReservation::deleteAllResaByJour($gite,$id);
-		}
-		ControllerReservation::gererDemandes();
-	}
-
 	public static function gererDemandes() {
 		extract($_GET);
 		extract($_POST);
-		//util::disp("post",$_POST);
-		
+		//Util::disp("get = ",$_GET);
+		//Util::disp("post = ",$_POST);		
 		// traitement d'une éventuelle action valider/rejeter en provenance de la page gererDemandes
 		if (sizeof($_POST) > 0) {
 			foreach ($_POST as $key => $value) {
@@ -69,13 +27,13 @@ class ControllerReservation {
 		if (isset($_POST['deleteResa'])) {
 			ModelReservation::deleteAllResaByJour($gite,$id);
 		}
+		if (isset($_POST['updateResa'])) {
+			ControllerReservation::modifierResa($gite,$jour,$id);
+		}
 
 		// récupération des demandes état 0 ou état 1
 		$tabDemandes0 = ModelReservation::recupererDemandes($gite,0);
-		//Util::disp("demande état 0 pour $gite = ",$tabDemandes0);
 		$idDemandesEtat0 = ModelReservation::idDemandes($gite,0);
-		//Util::disp("identifiants état 0 pour $gite = ",$idDemandesEtat0);
-		
 		
 		$tab0 = Array();
 		foreach ($idDemandesEtat0 as $key => $value) {
@@ -83,7 +41,6 @@ class ControllerReservation {
 			$tab0[] = ModelReservation::demande($gite,0,$idDem);
 		}
 		$tabDemandes1 = ModelReservation::recupererDemandes($_GET['gite'],1);
-		//Util::disp("demande état 1 pour $gite = ",$tabDemandes1);
 
 		// calcul du message global à afficher
 		$size = sizeof($idDemandesEtat0);
@@ -144,11 +101,70 @@ class ControllerReservation {
 			$mois = $mois_actuel;
 			$an = $an_actuel;
 		}
-		$cal = ModelGites::buildCalendar($gite,$mois,$an);
-		$form = ModelReservation::formulaireResa();
+		$cal = ModelGites::buildCalendar($gite,$mois,$an,"");
+		$form = ModelReservation::formulaireResa(array());
 		$type = "creerResa";
     	require_once(File::build_path(array('view','admin','view.php')));
 	}
+
+	public static function modifierResa($gite,$jour,$id) {
+		extract($_POST);
+		extract($_GET);
+		Util::disp("post = ",$_POST);
+		Util::disp("get = ",$_GET);
+		$resa = array();
+		$id_resa = ModelReservation::getResaByJour($gite,$jour)['id'];
+		$jours_resa = ModelReservation::demandes($gite,1,$id_resa);
+		$tabjourArrivee = explode("-",$jours_resa[0]['jour']);
+		$jour_Arrivee = $tabjourArrivee[2]."-".$tabjourArrivee[1]."-".$tabjourArrivee[0];
+		$tabjourDepart = explode("-",$jours_resa[sizeof($jours_resa)-1]['jour']);
+		$jour_Depart = $tabjourDepart[2]."-".$tabjourDepart[1]."-".$tabjourDepart[0];
+		$nom = $jours_resa[0]['nom'];
+		$prenom = $jours_resa[0]['prenom'];
+		$telephone = $jours_resa[0]['telephone'];
+		$email = $jours_resa[0]['email'];
+		$adresse = $jours_resa[0]['adresse'];
+		$codepostal = $jours_resa[0]['codepostal'];
+		$ville = $jours_resa[0]['ville'];
+		$pays = $jours_resa[0]['pays'];
+		$message = $jours_resa[0]['message'];
+		if (isset($_POST['updateResa'])) {
+			$resa['id'] = $id_resa;
+			$resa['jourArrivee'] = $jour_Arrivee;
+			$resa['jourDepart'] = $jour_Depart;
+			$resa['nom'] = $nom;
+			$resa['prenom'] = $prenom;
+			$resa['telephone'] = $telephone;
+			$resa['email'] = $email;
+			$resa['adresse'] = $adresse;
+			$resa['codepostal'] = $codepostal;
+			$resa['ville'] = $ville;
+			$resa['pays'] = $pays;
+			$resa['message'] = $message;
+			Util::disp("resa = ",$resa);
+		} else {
+			Util::disp("message = ",$message);
+			// insertion dans la base de données
+			ModelReservation::deleteAllResaByJour($gite,$id);
+			ModelReservation::insertionResaManuelle($gite,$jour_Arrivee,$jour_Depart,$nom,$prenom,$email,$telephone,$adresse,$codepostal,$ville,$pays,$message);
+		}
+		// calcul du calendrier
+		$mois_actuel = date("m", time());
+		$an_actuel = date("Y", time());
+		// récupération du mois et de l'année éventuellement passés en GET via les boutons du calendrier
+		extract($_GET);
+		// si la variable mois n'existe pas, mois et année correspondent au mois et à l'année courante
+		if (!isset($_GET["mois"])) {
+			$mois = $mois_actuel;
+			$an = $an_actuel;
+		}
+		$cal = ModelGites::buildCalendar($gite,$mois,$an,"");
+		$form = ModelReservation::formulaireResa($resa);
+		$type = "modifierResa";
+    	require_once(File::build_path(array('view','admin','view.php')));
+	}
+
+
 
 	public static function editerResa() {
 		extract($_GET);
@@ -166,6 +182,12 @@ class ControllerReservation {
 		$cal = ModelGites::buildCalendar($gite,$mois,$an,$jour);
 		$resa = ModelReservation::getResaByJour($gite,$jour);
 		$affichage_resa = ModelReservation::afficherResa($resa);//Util::disp("resa=",$resa);
+		$boutons_resa = "";
+		if (($affichage_resa != "") && ((int)substr($jour, 5, 2) == $mois)) {
+			$boutons_resa .= "<input type='submit' name='deleteDay' value='supprimer la nuitée du ".$jour."'>";
+			$boutons_resa .= "<input type='submit' name='deleteResa' value='supprimer la résa entière'>";
+			$boutons_resa .= "<input type='submit' name='updateResa' value='modifier la résa'>";
+		}
 		$type = "editerResa";
     	require_once(File::build_path(array('view','admin','view.php')));
 	}

@@ -2,6 +2,37 @@
 
 class ModelGites extends Model {
 
+  public static function lien($controller,$action,$gite,$mois,$an,$img) {
+    return "<a href='index.php?controller=".$controller."&action=".$action."&gite=".$gite."&mois=".$mois."&an=".$an."'><div align='left'><img border='0' src='img/planning/".$img."'></div></a>";
+  }
+
+  public static function construire_entete($lien_prec,$lien_suiv,$mois_en_clair,$an) {
+     $table_entete = 
+      "<table align='center' width='420' border='0' cellpadding='5' cellspacing='0'  class='tab_cal'>
+        <tr>
+          <td height='51' colspan='7'>
+            <table width='381' border='0' cellpadding='0' cellspacing='0'>
+              <tr>
+                <td width='290' class='date'><div>".$mois_en_clair.' '.$an."</div></td>
+                <td width='50'>".$lien_prec."</td>
+                <td width='41'>".$lien_suiv."</td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr align='center' class='jours'>
+          <td width='60'>L</td>
+          <td width='60'>M</td>
+          <td width='60'>M</td>
+          <td width='60'>J</td>
+          <td width='60'>V</td>
+          <td width='60'>S</td>
+          <td width='60'>D</td>
+        </tr>
+      </table>";
+    return $table_entete;
+  }
+
   public static function buildCalendar($gite,$mois,$an,$jour) {
     // calcul du mois suivant 
     $mois_suivant = $mois + 1;
@@ -78,7 +109,6 @@ class ModelGites extends Model {
         // si c'est un jour reserve on applique le style reserve
         if ($tab_jours[$ce_jour][0]) {
           if (Session::is_admin()) {
-            //$aff .= '<td id="'.$ce_jour.'" width="60" class="reserve" title="éditer la résa" onclick="montrerResa('."'".$ce_jour."-".$mois."-".$an."'".');">';
             $aff .= '<td id="'.$ce_jour.'" width="60" class="reserve" title="éditer la résa">';
           } else {
             $aff .= '<td id="'.$ce_jour.'" width="60" class="reserve">';
@@ -111,7 +141,6 @@ class ModelGites extends Model {
             // si c'est un jour reserve on applique le style reserve
             if ($tab_jours[$jour_suiv][0]) {
               if (Session::is_admin()) {
-                //$aff .= '<td id="'.$jour_suiv.'" width="60" title="éditer la résa" class="reserve" onclick="montrerResa('."'".$jour_suiv."-".$mois."-".$an."'".');">';
                 $aff .= '<td id="'.$jour_suiv.'" width="60" title="éditer la résa" class="reserve">';
               } else {
                 $aff .= '<td class="reserve" id="'.$jour_suiv.'" width="60">';
@@ -145,106 +174,20 @@ class ModelGites extends Model {
     $cal['mois_suivant'] = $mois_suivant;
     $cal['an_suivant'] = $an_suivant;
     $cal['mois_en_clair'] = $mois_en_clair;
-    $lien_prec_non_admin = "<a href='index.php?controller=page&action=loadPlanning&gite=".$gite."&mois=".$mois_prec."&an=".$an_prec."'><div align='left'><img border='0' src='img/planning/prec.png'></div></a>";
-    $lien_suiv_non_admin = "<a href='index.php?controller=page&action=loadPlanning&gite=".$gite."&mois=".$mois_suivant."&an=".$an_suivant."'><div><img border='0' src='img/planning/suiv.png'></div></a>";
-    $lien_prec_gererDemandes = "<a href='index.php?controller=reservation&action=gererDemandes&gite=".$gite."&mois=".$mois_prec."&an=".$an_prec."'><div align='left'><img border='0' src='img/planning/prec.png'></div></a>";
-    $lien_suiv_gererDemandes = "<a href='index.php?controller=reservation&action=gererDemandes&gite=".$gite."&mois=".$mois_suivant."&an=".$an_suivant."'><div><img border='0' src='img/planning/suiv.png'></div></a>";
-    $lien_prec_creerResa = "<a href='index.php?controller=reservation&action=creerResa&gite=".$gite."&mois=".$mois_prec."&an=".$an_prec."'><div align='left'><img border='0' src='img/planning/prec.png'></div></a>";
-    $lien_suiv_creerResa = "<a href='index.php?controller=reservation&action=creerResa&gite=".$gite."&mois=".$mois_suivant."&an=".$an_suivant."'><div><img border='0' src='img/planning/suiv.png'></div></a>";
-    $lien_prec_editerResa = "<a href='index.php?controller=reservation&action=editerResa&gite=".$gite."&mois=".$mois_prec."&an=".$an_prec."&jour=".$jour."'><div align='left'><img border='0' src='img/planning/prec.png'></div></a>";
-    $lien_suiv_editerResa = "<a href='index.php?controller=reservation&action=editerResa&gite=".$gite."&mois=".$mois_suivant."&an=".$an_suivant."&jour=".$jour."'><div><img border='0' src='img/planning/suiv.png'></div></a>";
-    $table_entete_non_admin = 
-      "<table align='center' width='420' border='0' cellpadding='5' cellspacing='0'  class='tab_cal'>
-        <tr>
-          <td height='51' colspan='7'>
-            <table width='381' border='0' cellpadding='0' cellspacing='0'>
-              <tr>
-                <td width='290' class='date'><div>".$mois_en_clair.' '.$an."</div></td>
-                <td width='50'>".$lien_prec_non_admin."</td>
-                <td width='41'>".$lien_suiv_non_admin."</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr align='center' class='jours'>
-          <td width='60'>L</td>
-          <td width='60'>M</td>
-          <td width='60'>M</td>
-          <td width='60'>J</td>
-          <td width='60'>V</td>
-          <td width='60'>S</td>
-          <td width='60'>D</td>
-        </tr>
-      </table>";
-    $table_entete_gererDemandes = 
-      "<table align='center' width='420' border='0' cellpadding='5' cellspacing='0'  class='tab_cal'>
-        <tr>
-          <td height='51' colspan='7'>
-            <table width='381' border='0' cellpadding='0' cellspacing='0'>
-              <tr>
-                <td width='290' class='date'><div>".$mois_en_clair.' '.$an."</div></td>
-                <td width='50'>".$lien_prec_gererDemandes."</td>
-                <td width='41'>".$lien_suiv_gererDemandes."</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr align='center' class='jours'>
-          <td width='60'>L</td>
-          <td width='60'>M</td>
-          <td width='60'>M</td>
-          <td width='60'>J</td>
-          <td width='60'>V</td>
-          <td width='60'>S</td>
-          <td width='60'>D</td>
-        </tr>
-      </table>";
-    $table_entete_creerResa = 
-      "<table align='center' width='420' border='0' cellpadding='5' cellspacing='0'  class='tab_cal'>
-        <tr>
-          <td height='51' colspan='7'>
-            <table width='381' border='0' cellpadding='0' cellspacing='0'>
-              <tr>
-                <td width='290' class='date'><div>".$mois_en_clair.' '.$an."</div></td>
-                <td width='50'>".$lien_prec_creerResa."</td>
-                <td width='41'>".$lien_suiv_creerResa."</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr align='center' class='jours'>
-          <td width='60'>L</td>
-          <td width='60'>M</td>
-          <td width='60'>M</td>
-          <td width='60'>J</td>
-          <td width='60'>V</td>
-          <td width='60'>S</td>
-          <td width='60'>D</td>
-        </tr>
-      </table>";
-    $table_entete_editerResa = 
-      "<table align='center' width='420' border='0' cellpadding='5' cellspacing='0'  class='tab_cal'>
-        <tr>
-          <td height='51' colspan='7'>
-            <table width='381' border='0' cellpadding='0' cellspacing='0'>
-              <tr>
-                <td width='290' class='date'><div>".$mois_en_clair.' '.$an."</div></td>
-                <td width='50'>".$lien_prec_editerResa."</td>
-                <td width='41'>".$lien_suiv_editerResa."</td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <tr align='center' class='jours'>
-          <td width='60'>L</td>
-          <td width='60'>M</td>
-          <td width='60'>M</td>
-          <td width='60'>J</td>
-          <td width='60'>V</td>
-          <td width='60'>S</td>
-          <td width='60'>D</td>
-        </tr>
-      </table>";
+    $lien_prec_non_admin = ModelGites::lien("page","loadPlanning",$gite,$mois_prec,$an_prec,"prec.png");
+    $lien_suiv_non_admin = ModelGites::lien("page","loadPlanning",$gite,$mois_suivant,$an_suivant,"suiv.png");
+    $lien_prec_gererDemandes = ModelGites::lien("reservation","gererDemandes",$gite,$mois_prec,$an_prec,"prec.png");
+    $lien_suiv_gererDemandes = ModelGites::lien("reservation","gererDemandes",$gite,$mois_suivant,$an_suivant,"suiv.png");
+    $lien_prec_creerResa = ModelGites::lien("reservation","creerResa",$gite,$mois_prec,$an_prec,"prec.png");
+    $lien_suiv_creerResa = ModelGites::lien("reservation","creerResa",$gite,$mois_suivant,$an_suivant,"suiv.png");
+    $lien_prec_editerResa = ModelGites::lien("reservation","gererDemandes",$gite,$mois_prec,$an_prec,"prec.png");
+    $lien_suiv_editerResa = ModelGites::lien("reservation","gererDemandes",$gite,$mois_suivant,$an_suivant,"suiv.png");
+    //$lien_prec_editerResa = "<a href='index.php?controller=reservation&action=editerResa&gite=".$gite."&mois=".$mois_prec."&an=".$an_prec."&jour=".$jour."'><div align='left'><img border='0' src='img/planning/prec.png'></div></a>";
+    //$lien_suiv_editerResa = "<a href='index.php?controller=reservation&action=editerResa&gite=".$gite."&mois=".$mois_suivant."&an=".$an_suivant."&jour=".$jour."'><div><img border='0' src='img/planning/suiv.png'></div></a>";
+    $table_entete_non_admin = ModelGites::construire_entete($lien_prec_non_admin,$lien_suiv_non_admin,$mois_en_clair,$an);
+    $table_entete_gererDemandes = ModelGites::construire_entete($lien_prec_gererDemandes,$lien_suiv_gererDemandes,$mois_en_clair,$an);
+    $table_entete_creerResa = ModelGites::construire_entete($lien_prec_creerResa,$lien_suiv_creerResa,$mois_en_clair,$an);
+    $table_entete_editerResa = ModelGites::construire_entete($lien_prec_editerResa,$lien_suiv_editerResa,$mois_en_clair,$an);
     $cal['entete_non_admin'] = $table_entete_non_admin;
     $cal['entete_gererDemandes'] = $table_entete_gererDemandes;
     $cal['entete_creerResa'] = $table_entete_creerResa;

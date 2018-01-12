@@ -88,6 +88,15 @@ class ModelReservation extends Model {
 		return $tab_Planning[0];
 	}
 
+	public static function demandes($gite,$etat,$id) {
+		$sql = "SELECT * FROM calendrier$gite WHERE etat = '$etat' AND id = '$id';";
+		$req_prep = Model::$pdo->prepare($sql);
+		$req_prep->execute();
+		$req_prep->setFetchMode(PDO::FETCH_ASSOC);
+		$tab_Planning = $req_prep->fetchAll();
+		return $tab_Planning;
+	}
+
 	public static function getResaByJour($gite,$jour) {
 		$sql = "SELECT * FROM calendrier$gite WHERE jour = '$jour';";
 		$req_prep = Model::$pdo->prepare($sql);
@@ -134,61 +143,61 @@ class ModelReservation extends Model {
 		$req_prep->execute($values); 
 	}
 
-	public static function formulaireResa() {
+	public static function formulaireResa($resa) {
 		$form = '<div class="ligneFormulaireResa">
 				<div class="itemLigneResa">
 					<label>date d\'arrivée *</label>
-					<input name="jourArrivee" id="j1" type="text" class="datepicker" required>
+					<input name="jourArrivee" id="j1" type="text" class="datepicker" value="'.$resa['jourArrivee'].'">
 				</div>
 				<div class="itemLigneResa">
 					<label>date de départ *</label>
-					<input name="jourDepart" id="j2" type="text" class="datepicker" required>
+					<input name="jourDepart" id="j2" type="text" class="datepicker" value="'.$resa['jourDepart'].'">
 				</div>
 			</div>
 			<div class="ligneFormulaireResa">
 				<div class="itemLigneResa">
 					<label>nom *</label>
-					<input name="nom" id="nom" type="text" required>
+					<input name="nom" id="nom" type="text" value="'.$resa['nom'].'">
 				</div>
 				<div class="itemLigneResa">
 					<label>prénom *</label>
-					<input name="prenom" id="prenom" type="text" required>
+					<input name="prenom" id="prenom" type="text" value="'.$resa['prenom'].'">
 				</div>
 			</div>
 			<div class="ligneFormulaireResa">
 				<div class="itemLigneResa">
 					<label>numéro de téléphone *</label>
-					<input name="telephone" id="telephone" type="text" required>
+					<input name="telephone" id="telephone" type="text" value="'.$resa['telephone'].'">
 				</div>
 				<div class="itemLigneResa">
 					<label>e-mail *</label>
-					<input name="mail" id="mail" type="email" required>
+					<input name="mail" id="mail" type="email" value="'.$resa['email'].'">
 				</div>
 			</div>
 			<div class="ligneFormulaireResa">
 				<div class="itemLigneResa">
 					<label>adresse *</label>
-					<input name="adresse" id="adresse" type="text" required>
+					<input name="adresse" id="adresse" type="text" value="'.$resa['adresse'].'">
 				</div>
 				<div class="itemLigneResa">
 					<label>code postal *</label>
-					<input name="cp" id="cp" type="text" required><br>
+					<input name="cp" id="cp" type="text" value="'.$resa['codepostal'].'"><br>
 				</div>
 			</div>
 			<div class="ligneFormulaireResa">
 				<div class="itemLigneResa">
 					<label>ville *</label>
-					<input name="ville" id="ville" type="text" required>
+					<input name="ville" id="ville" type="text" value="'.$resa['ville'].'">
 				</div>
 				<div class="itemLigneResa">
 					<label>pays *</label>
-					<input name="pays" id="pays" type="pays" required>
+					<input name="pays" id="pays" type="pays" value="'.$resa['pays'].'">
 				</div>
 			</div>
 			<div class="ligneFormulaireResa">
 				<div class="itemLigneResa">
 					<label>message éventuel</label>
-					<textarea id="message" name="message" placeholder="votre message" maxlength="500" rows="5" cols="100" class="message" style="width:100%;border-radius:7px;border:solid 2px lightgrey;"></textarea>
+					<textarea id="message" name="message" value="'.$resa['message'].'" maxlength="500" rows="5" cols="100" class="message" style="width:100%;border-radius:7px;border:solid 2px lightgrey;"></textarea>
 				</div>
 			</div>';
 		return $form;

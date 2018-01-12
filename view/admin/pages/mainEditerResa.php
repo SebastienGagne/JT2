@@ -8,14 +8,7 @@
 		<input type="hidden" name="id" value="<?php echo $resa['id']; ?>">
 		<input type="hidden" name="gite" value="<?php echo $gite; ?>">
 		<br>
-		<?php 
-		if (($affichage_resa != "") && ((int)substr($jour, 5, 2) == $mois)) {
-			echo $affichage_resa;
-			echo "<input type='submit' name='deleteDay' value='supprimer la nuitée du ".$jour."'>";
-			echo "<input type='submit' name='deleteResa' value='supprimer la résa entière'>";
-		}
-		?>
-		<!--<input type="submit" name="deleteDay" value="supprimer la nuitée du <?php echo $jour; ?>">
-		<input type="submit" name="deleteResa" value="supprimer la résa entière">-->
+		<?php echo $affichage_resa; ?>
+		<?php echo $boutons_resa; ?>
 	</form>
 </main>
